@@ -1,0 +1,4862 @@
+<!-- =========================================================
+     SAMAIA GEORGIAN RESTAURANT
+     COMPLETE WORDPRESS CUSTOM HTML WEBSITE
+     ========================================================= -->
+
+<div class="samaia-site">
+
+<style>
+
+/* =========================================================
+   SAMAIA GLOBAL STYLES
+   ========================================================= */
+
+.samaia-site {
+  --burgundy: #651d2b;
+  --burgundy-dark: #300c14;
+  --burgundy-deep: #200a0f;
+  --burgundy-light: #8b3947;
+  --gold: #c9a96a;
+  --gold-light: #e3c88c;
+  --cream: #f5efe5;
+  --cream-dark: #e7dccb;
+  --white: #fffdf9;
+  --dark: #171313;
+  --gray: #756d68;
+  --border: rgba(101, 29, 43, 0.14);
+
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  color: var(--dark);
+  background: var(--cream);
+
+  font-family:
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  box-sizing: border-box;
+}
+
+.samaia-site *,
+.samaia-site *::before,
+.samaia-site *::after {
+  box-sizing: border-box;
+}
+
+.samaia-site a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.samaia-site button,
+.samaia-site input,
+.samaia-site select,
+.samaia-site textarea {
+  font: inherit;
+}
+
+.samaia-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.samaia-display,
+.samaia-site h1,
+.samaia-site h2,
+.samaia-site h3 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-weight: 400;
+}
+
+.samaia-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--gold);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.samaia-eyebrow::before,
+.samaia-eyebrow::after {
+  content: "";
+
+  width: 30px;
+  height: 1px;
+
+  background: currentColor;
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.samaia-header {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  color: white;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.samaia-header.is-scrolled {
+  position: fixed;
+
+  background:
+    rgba(32, 10, 15, 0.97);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.2);
+}
+
+.samaia-nav {
+  height: 86px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.samaia-logo {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+.samaia-logo-main {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 27px;
+  letter-spacing: 0.16em;
+}
+
+.samaia-logo-sub {
+  margin-top: 7px;
+
+  color: var(--gold-light);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+}
+
+.samaia-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.samaia-nav-links a {
+  position: relative;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  opacity: 0.9;
+
+  transition:
+    color 0.25s ease;
+}
+
+.samaia-nav-links a:not(.samaia-nav-book)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--gold-light);
+
+  transition:
+    width 0.25s ease;
+}
+
+.samaia-nav-links a:hover {
+  color: var(--gold-light);
+}
+
+.samaia-nav-links a:hover::after {
+  width: 100%;
+}
+
+.samaia-nav-book {
+  padding: 13px 19px;
+
+  border:
+    1px solid
+    rgba(227, 200, 140, 0.6);
+
+  transition:
+    all 0.25s ease;
+}
+
+.samaia-nav-book:hover {
+  background: var(--gold);
+
+  border-color: var(--gold);
+
+  color: var(--dark);
+}
+
+.samaia-menu-toggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.3);
+
+  background: transparent;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.samaia-menu-toggle span {
+  display: block;
+
+  width: 20px;
+  height: 1px;
+
+  margin: 5px auto;
+
+  background: currentColor;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.samaia-hero {
+  position: relative;
+
+  min-height: 820px;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(27,8,13,0.95) 0%,
+      rgba(27,8,13,0.78) 42%,
+      rgba(27,8,13,0.22) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(20,7,10,0.7),
+      transparent 45%
+    ),
+    url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=2000&q=85")
+    center/cover no-repeat;
+}
+
+.samaia-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(720px,100%);
+
+  padding:
+    150px
+    0
+    180px;
+}
+
+.samaia-hero h1 {
+  max-width: 800px;
+
+  margin:
+    28px
+    0
+    25px;
+
+  font-size:
+    clamp(56px,7.5vw,105px);
+
+  line-height: 0.94;
+
+  letter-spacing:
+    -0.055em;
+}
+
+.samaia-hero h1 em {
+  color: var(--gold-light);
+
+  font-style: italic;
+}
+
+.samaia-hero-text {
+  max-width: 550px;
+
+  color:
+    rgba(255,255,255,0.76);
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+.samaia-hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 36px;
+}
+
+.samaia-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding:
+    0
+    28px;
+
+  border:
+    1px solid
+    transparent;
+
+  cursor: pointer;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform: uppercase;
+
+  transition:
+    all 0.3s ease;
+}
+
+.samaia-btn-primary {
+  background: var(--gold);
+
+  color: var(--dark);
+}
+
+.samaia-btn-primary:hover {
+  background:
+    var(--gold-light);
+
+  transform:
+    translateY(-2px);
+}
+
+.samaia-btn-outline {
+  border-color:
+    rgba(255,255,255,0.45);
+
+  background:
+    rgba(255,255,255,0.03);
+
+  color: white;
+}
+
+.samaia-btn-outline:hover {
+  background: white;
+
+  color: var(--dark);
+}
+
+.samaia-hero-bottom {
+  position: absolute;
+
+  z-index: 3;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.15);
+
+  background:
+    rgba(20,7,10,0.3);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.samaia-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+}
+
+.samaia-stat {
+  min-height: 105px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding:
+    18px
+    30px;
+
+  border-right:
+    1px solid
+    rgba(255,255,255,0.13);
+}
+
+.samaia-stat:last-child {
+  border-right: 0;
+}
+
+.samaia-stat-number {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  color:
+    var(--gold-light);
+
+  font-size: 28px;
+}
+
+.samaia-stat-label {
+  margin-top: 6px;
+
+  color:
+    rgba(255,255,255,0.62);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing:
+    0.14em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+.samaia-intro {
+  padding:
+    130px
+    0;
+
+  background:
+    var(--cream);
+}
+
+.samaia-intro-grid {
+  display: grid;
+
+  grid-template-columns:
+    0.85fr
+    1.15fr;
+
+  gap: 100px;
+
+  align-items:
+    center;
+}
+
+.samaia-intro-image {
+  position: relative;
+}
+
+.samaia-intro-image img {
+  position: relative;
+
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: 590px;
+
+  object-fit:
+    cover;
+}
+
+.samaia-intro-image::after {
+  content: "";
+
+  position: absolute;
+
+  top: 24px;
+  left: 24px;
+
+  width: 100%;
+  height: 100%;
+
+  border:
+    1px solid
+    var(--gold);
+}
+
+.samaia-intro-copy h2 {
+  max-width: 650px;
+
+  margin:
+    24px
+    0;
+
+  color:
+    var(--burgundy-dark);
+
+  font-size:
+    clamp(42px,5vw,70px);
+
+  line-height:
+    1.02;
+}
+
+.samaia-intro-copy p {
+  max-width: 590px;
+
+  color:
+    var(--gray);
+
+  font-size: 16px;
+
+  line-height:
+    1.9;
+}
+
+.samaia-intro-signature {
+  margin-top: 35px;
+
+  color:
+    var(--burgundy);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   SIGNATURE DISHES
+   ========================================================= */
+
+.samaia-signature {
+  padding:
+    120px
+    0;
+
+  background:
+    var(--burgundy-dark);
+
+  color:
+    white;
+}
+
+.samaia-section-heading {
+  max-width: 700px;
+
+  margin-bottom:
+    60px;
+}
+
+.samaia-section-heading h2 {
+  margin:
+    22px
+    0
+    18px;
+
+  font-size:
+    clamp(42px,5vw,68px);
+
+  line-height:
+    1.02;
+}
+
+.samaia-section-heading p {
+  max-width: 600px;
+
+  color:
+    rgba(255,255,255,0.62);
+
+  line-height:
+    1.8;
+}
+
+.samaia-dishes {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap: 22px;
+}
+
+.samaia-dish {
+  position: relative;
+
+  min-height: 520px;
+
+  overflow:
+    hidden;
+}
+
+.samaia-dish img {
+  width: 100%;
+  height: 100%;
+
+  min-height: 520px;
+
+  display: block;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform 0.7s ease;
+}
+
+.samaia-dish:hover img {
+  transform:
+    scale(1.06);
+}
+
+.samaia-dish::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(20,7,10,0.95) 0%,
+      rgba(20,7,10,0.1) 65%,
+      transparent 100%
+    );
+}
+
+.samaia-dish-content {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+}
+
+.samaia-dish-tag {
+  color:
+    var(--gold-light);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.18em;
+
+  text-transform:
+    uppercase;
+}
+
+.samaia-dish h3 {
+  margin:
+    9px
+    0;
+
+  font-size:
+    31px;
+}
+
+.samaia-dish p {
+  margin: 0;
+
+  color:
+    rgba(255,255,255,0.7);
+
+  font-size: 13px;
+
+  line-height:
+    1.6;
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.samaia-menu-section {
+  padding:
+    130px
+    0;
+
+  background:
+    var(--white);
+}
+
+.samaia-menu-header {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    flex-end;
+
+  gap: 40px;
+
+  margin-bottom:
+    45px;
+}
+
+.samaia-menu-header h2 {
+  margin:
+    20px
+    0
+    0;
+
+  color:
+    var(--burgundy-dark);
+
+  font-size:
+    clamp(44px,5vw,70px);
+
+  line-height:
+    1;
+}
+
+.samaia-menu-tabs {
+  display: flex;
+
+  flex-wrap:
+    wrap;
+
+  justify-content:
+    flex-end;
+
+  gap: 8px;
+}
+
+.samaia-menu-tab {
+  padding:
+    12px
+    15px;
+
+  border:
+    1px solid
+    var(--border);
+
+  background:
+    transparent;
+
+  color:
+    var(--gray);
+
+  cursor:
+    pointer;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.09em;
+
+  text-transform:
+    uppercase;
+
+  transition:
+    all 0.25s ease;
+}
+
+.samaia-menu-tab:hover,
+.samaia-menu-tab.active {
+  background:
+    var(--burgundy);
+
+  border-color:
+    var(--burgundy);
+
+  color:
+    white;
+}
+
+.samaia-menu-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:
+    0
+    70px;
+
+  border-top:
+    1px solid
+    var(--border);
+}
+
+.samaia-menu-item {
+  padding:
+    28px
+    0;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  animation:
+    samaiaMenuFade 0.35s ease;
+}
+
+@keyframes samaiaMenuFade {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+
+}
+
+.samaia-menu-item.hidden {
+  display:
+    none;
+}
+
+.samaia-menu-item-top {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  gap: 20px;
+}
+
+.samaia-menu-item h3 {
+  margin: 0;
+
+  color:
+    var(--burgundy-dark);
+
+  font-size:
+    23px;
+}
+
+.samaia-menu-price {
+  color:
+    var(--burgundy);
+
+  font-size:
+    15px;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+}
+
+.samaia-menu-item p {
+  max-width:
+    520px;
+
+  margin:
+    9px
+    0
+    0;
+
+  color:
+    var(--gray);
+
+  font-size:
+    13px;
+
+  line-height:
+    1.65;
+}
+
+
+/* =========================================================
+   MENU NOTES
+   ========================================================= */
+
+.samaia-menu-notes {
+  margin-top:
+    50px;
+
+  padding:
+    30px;
+
+  border:
+    1px solid
+    var(--border);
+
+  background:
+    var(--cream);
+}
+
+.samaia-menu-notes p {
+  margin:
+    7px
+    0;
+
+  color:
+    var(--gray);
+
+  font-size:
+    12px;
+
+  line-height:
+    1.7;
+}
+
+.samaia-menu-notes strong {
+  color:
+    var(--burgundy);
+}
+
+
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
+
+.samaia-experience {
+  min-height:
+    650px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  text-align:
+    center;
+
+  color:
+    white;
+
+  background:
+    linear-gradient(
+      rgba(49,13,21,0.78),
+      rgba(49,13,21,0.84)
+    ),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
+    center/cover no-repeat;
+}
+
+.samaia-experience-inner {
+  max-width:
+    800px;
+
+  margin:
+    0
+    auto;
+}
+
+.samaia-experience blockquote {
+  margin:
+    30px
+    0;
+
+  font-size:
+    clamp(38px,5vw,65px);
+
+  line-height:
+    1.12;
+}
+
+.samaia-experience p {
+  color:
+    rgba(255,255,255,0.72);
+
+  line-height:
+    1.8;
+}
+
+
+/* =========================================================
+   REVIEWS
+   ========================================================= */
+
+.samaia-reviews {
+  padding:
+    130px
+    0;
+
+  background:
+    var(--cream);
+}
+
+.samaia-reviews-heading {
+  margin-bottom:
+    65px;
+
+  text-align:
+    center;
+}
+
+.samaia-reviews-heading h2 {
+  margin:
+    20px
+    0
+    15px;
+
+  color:
+    var(--burgundy-dark);
+
+  font-size:
+    clamp(42px,5vw,65px);
+}
+
+.samaia-review-rating {
+  color:
+    var(--gold);
+
+  font-size:
+    20px;
+
+  letter-spacing:
+    0.18em;
+}
+
+.samaia-review-count {
+  margin-top:
+    10px;
+
+  color:
+    var(--gray);
+
+  font-size:
+    12px;
+
+  letter-spacing:
+    0.1em;
+
+  text-transform:
+    uppercase;
+}
+
+.samaia-review-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:
+    22px;
+}
+
+.samaia-review {
+  padding:
+    38px;
+
+  background:
+    var(--white);
+
+  border:
+    1px solid
+    var(--border);
+}
+
+.samaia-review-stars {
+  color:
+    var(--gold);
+
+  letter-spacing:
+    0.15em;
+}
+
+.samaia-review p {
+  margin:
+    22px
+    0;
+
+  color:
+    #514a46;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    18px;
+
+  line-height:
+    1.65;
+}
+
+.samaia-review-author {
+  color:
+    var(--burgundy);
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.15em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.samaia-gallery {
+  display:
+    grid;
+
+  grid-template-columns:
+    1.2fr
+    0.8fr
+    0.8fr;
+
+  grid-template-rows:
+    300px
+    300px;
+
+  gap:
+    5px;
+
+  background:
+    var(--burgundy-dark);
+}
+
+.samaia-gallery-item {
+  overflow:
+    hidden;
+}
+
+.samaia-gallery-item:first-child {
+  grid-row:
+    span 2;
+}
+
+.samaia-gallery-item img {
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    block;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform 0.6s ease;
+}
+
+.samaia-gallery-item:hover img {
+  transform:
+    scale(1.06);
+}
+
+
+/* =========================================================
+   RESERVATION
+   ========================================================= */
+
+.samaia-reservation {
+  padding:
+    110px
+    0;
+
+  background:
+    var(--burgundy);
+
+  color:
+    white;
+}
+
+.samaia-reservation-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    1.2fr
+    0.8fr;
+
+  gap:
+    80px;
+
+  align-items:
+    center;
+}
+
+.samaia-reservation h2 {
+  margin:
+    20px
+    0;
+
+  font-size:
+    clamp(45px,5vw,72px);
+
+  line-height:
+    1;
+}
+
+.samaia-reservation p {
+  max-width:
+    600px;
+
+  color:
+    rgba(255,255,255,0.7);
+
+  line-height:
+    1.8;
+}
+
+.samaia-reservation-info {
+  padding:
+    35px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.2);
+
+  background:
+    rgba(0,0,0,0.08);
+}
+
+.samaia-contact-row {
+  padding:
+    18px
+    0;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.15);
+}
+
+.samaia-contact-row:last-child {
+  border-bottom:
+    0;
+}
+
+.samaia-contact-label {
+  display:
+    block;
+
+  margin-bottom:
+    6px;
+
+  color:
+    var(--gold-light);
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform:
+    uppercase;
+}
+
+.samaia-contact-value {
+  color:
+    white;
+
+  font-size:
+    15px;
+
+  line-height:
+    1.6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.samaia-footer {
+  padding:
+    70px
+    0
+    30px;
+
+  background:
+    var(--burgundy-deep);
+
+  color:
+    white;
+}
+
+.samaia-footer-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    1.3fr
+    0.7fr
+    0.7fr;
+
+  gap:
+    70px;
+
+  padding-bottom:
+    55px;
+}
+
+.samaia-footer-logo {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    35px;
+
+  letter-spacing:
+    0.12em;
+}
+
+.samaia-footer-brand p {
+  max-width:
+    400px;
+
+  margin-top:
+    20px;
+
+  color:
+    rgba(255,255,255,0.55);
+
+  line-height:
+    1.8;
+}
+
+.samaia-footer h4 {
+  margin:
+    0
+    0
+    20px;
+
+  color:
+    var(--gold-light);
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform:
+    uppercase;
+}
+
+.samaia-footer-links {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    13px;
+
+  color:
+    rgba(255,255,255,0.65);
+
+  font-size:
+    13px;
+}
+
+.samaia-footer-links a:hover {
+  color:
+    white;
+}
+
+.samaia-footer-bottom {
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  gap:
+    20px;
+
+  padding-top:
+    25px;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.12);
+
+  color:
+    rgba(255,255,255,0.4);
+
+  font-size:
+    11px;
+}
+
+
+/* =========================================================
+   RESERVATION MODAL
+   ========================================================= */
+
+.samaia-modal {
+  position:
+    fixed;
+
+  z-index:
+    999999;
+
+  inset:
+    0;
+
+  display:
+    none;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    20px;
+
+  background:
+    rgba(10,4,6,0.8);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.samaia-modal.active {
+  display:
+    flex;
+}
+
+.samaia-modal-box {
+  position:
+    relative;
+
+  width:
+    min(560px,100%);
+
+  max-height:
+    90vh;
+
+  overflow-y:
+    auto;
+
+  padding:
+    45px;
+
+  background:
+    var(--cream);
+
+  color:
+    var(--dark);
+}
+
+.samaia-modal-close {
+  position:
+    absolute;
+
+  top:
+    16px;
+
+  right:
+    18px;
+
+  width:
+    38px;
+
+  height:
+    38px;
+
+  border:
+    0;
+
+  background:
+    transparent;
+
+  color:
+    var(--burgundy);
+
+  cursor:
+    pointer;
+
+  font-size:
+    25px;
+}
+
+.samaia-modal-box h2 {
+  margin:
+    15px
+    0
+    10px;
+
+  color:
+    var(--burgundy-dark);
+
+  font-size:
+    42px;
+}
+
+.samaia-modal-box > p {
+  color:
+    var(--gray);
+
+  font-size:
+    14px;
+
+  line-height:
+    1.7;
+}
+
+.samaia-form {
+  display:
+    grid;
+
+  gap:
+    15px;
+
+  margin-top:
+    28px;
+}
+
+.samaia-form-row {
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:
+    15px;
+}
+
+.samaia-form label {
+  display:
+    block;
+
+  margin-bottom:
+    7px;
+
+  color:
+    var(--burgundy);
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.1em;
+
+  text-transform:
+    uppercase;
+}
+
+.samaia-form input,
+.samaia-form select,
+.samaia-form textarea {
+  width:
+    100%;
+
+  padding:
+    14px;
+
+  border:
+    1px solid
+    var(--border);
+
+  outline:
+    none;
+
+  background:
+    white;
+
+  color:
+    var(--dark);
+}
+
+.samaia-form textarea {
+  min-height:
+    90px;
+
+  resize:
+    vertical;
+}
+
+.samaia-form-message {
+  display:
+    none;
+
+  padding:
+    14px;
+
+  background:
+    rgba(101,29,43,0.08);
+
+  color:
+    var(--burgundy);
+
+  font-size:
+    13px;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================================
+   SCROLL ANIMATIONS
+   ========================================================= */
+
+.samaia-reveal {
+  opacity:
+    0;
+
+  transform:
+    translateY(30px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.samaia-reveal.visible {
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .samaia-nav-links {
+    position:
+      absolute;
+
+    top:
+      86px;
+
+    left:
+      0;
+
+    width:
+      100%;
+
+    display:
+      none;
+
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    gap:
+      0;
+
+    padding:
+      10px
+      24px
+      25px;
+
+    background:
+      rgba(32,10,15,0.98);
+  }
+
+  .samaia-nav-links.open {
+    display:
+      flex;
+  }
+
+  .samaia-nav-links a {
+    padding:
+      16px
+      0;
+
+    border-bottom:
+      1px solid
+      rgba(255,255,255,0.1);
+  }
+
+  .samaia-nav-book {
+    margin-top:
+      10px;
+
+    text-align:
+      center;
+  }
+
+  .samaia-menu-toggle {
+    display:
+      block;
+  }
+
+  .samaia-intro-grid,
+  .samaia-reservation-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      60px;
+  }
+
+  .samaia-dishes,
+  .samaia-review-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .samaia-dish {
+    min-height:
+      550px;
+  }
+
+  .samaia-menu-header {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+  }
+
+  .samaia-menu-tabs {
+    justify-content:
+      flex-start;
+  }
+
+  .samaia-footer-grid {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+  .samaia-footer-brand {
+    grid-column:
+      1 / -1;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .samaia-container {
+    width:
+      calc(100% - 32px);
+  }
+
+  .samaia-nav {
+    height:
+      72px;
+  }
+
+  .samaia-nav-links {
+    top:
+      72px;
+  }
+
+  .samaia-hero {
+    min-height:
+      760px;
+  }
+
+  .samaia-hero-content {
+    padding:
+      120px
+      0
+      170px;
+  }
+
+  .samaia-hero h1 {
+    font-size:
+      58px;
+  }
+
+  .samaia-hero-actions {
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+  }
+
+  .samaia-btn {
+    width:
+      100%;
+  }
+
+  .samaia-stats {
+    grid-template-columns:
+      repeat(3,1fr);
+  }
+
+  .samaia-stat {
+    min-height:
+      85px;
+
+    padding:
+      10px;
+
+    text-align:
+      center;
+  }
+
+  .samaia-stat-number {
+    font-size:
+      20px;
+  }
+
+  .samaia-stat-label {
+    font-size:
+      7px;
+
+    letter-spacing:
+      0.04em;
+  }
+
+  .samaia-intro,
+  .samaia-signature,
+  .samaia-menu-section,
+  .samaia-reviews {
+    padding:
+      85px
+      0;
+  }
+
+  .samaia-intro-image img {
+    height:
+      430px;
+  }
+
+  .samaia-intro-image::after {
+    top:
+      14px;
+
+    left:
+      14px;
+  }
+
+  .samaia-menu-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .samaia-menu-item-top {
+    align-items:
+      flex-start;
+  }
+
+  .samaia-menu-item h3 {
+    font-size:
+      21px;
+  }
+
+  .samaia-menu-price {
+    font-size:
+      13px;
+  }
+
+  .samaia-gallery {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    grid-template-rows:
+      250px
+      200px
+      200px;
+  }
+
+  .samaia-gallery-item:first-child {
+    grid-column:
+      span 2;
+
+    grid-row:
+      auto;
+  }
+
+  .samaia-footer-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .samaia-footer-brand {
+    grid-column:
+      auto;
+  }
+
+  .samaia-footer-bottom {
+    flex-direction:
+      column;
+  }
+
+  .samaia-modal-box {
+    padding:
+      35px
+      22px;
+  }
+
+  .samaia-form-row {
+    grid-template-columns:
+      1fr;
+  }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header
+  class="samaia-header"
+  id="samaiaHeader"
+>
+
+  <div class="samaia-container samaia-nav">
+
+    <a
+      href="#samaia-home"
+      class="samaia-logo"
+    >
+
+      <span class="samaia-logo-main">
+        SAMAIA
+      </span>
+
+      <span class="samaia-logo-sub">
+        Georgian Restaurant
+      </span>
+
+    </a>
+
+
+    <nav
+      class="samaia-nav-links"
+      id="samaiaNavLinks"
+    >
+
+      <a href="#samaia-home">
+        Home
+      </a>
+
+      <a href="#samaia-story">
+        Our Story
+      </a>
+
+      <a href="#samaia-menu">
+        Menu
+      </a>
+
+      <a href="#samaia-gallery">
+        Gallery
+      </a>
+
+      <a href="#samaia-reviews">
+        Reviews
+      </a>
+
+      <a
+        href="#samaia-contact"
+        class="samaia-nav-book"
+      >
+        Book a Table
+      </a>
+
+    </nav>
+
+
+    <button
+      class="samaia-menu-toggle"
+      id="samaiaMenuToggle"
+      type="button"
+      aria-label="Open menu"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section
+  class="samaia-hero"
+  id="samaia-home"
+>
+
+  <div class="samaia-container">
+
+    <div class="samaia-hero-content samaia-reveal">
+
+      <span class="samaia-eyebrow">
+        Authentic Georgian Cuisine
+      </span>
+
+      <h1>
+        The Taste of
+        <em>Sakartvelo</em>
+      </h1>
+
+      <p class="samaia-hero-text">
+
+        Discover the warmth, generosity and unforgettable
+        flavours of Georgian cuisine in the heart of
+        Barnes, London.
+
+        A table where traditional recipes meet
+        genuine hospitality.
+
+      </p>
+
+
+      <div class="samaia-hero-actions">
+
+        <button
+          class="samaia-btn samaia-btn-primary samaia-open-modal"
+          type="button"
+        >
+          Book a Table
+        </button>
+
+        <a
+          href="#samaia-menu"
+          class="samaia-btn samaia-btn-outline"
+        >
+          Explore Our Menu
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="samaia-hero-bottom">
+
+    <div class="samaia-container samaia-stats">
+
+      <div class="samaia-stat">
+
+        <span class="samaia-stat-number">
+          4.8 ★
+        </span>
+
+        <span class="samaia-stat-label">
+          Google Rating
+        </span>
+
+      </div>
+
+
+      <div class="samaia-stat">
+
+        <span class="samaia-stat-number">
+          838+
+        </span>
+
+        <span class="samaia-stat-label">
+          Guest Reviews
+        </span>
+
+      </div>
+
+
+      <div class="samaia-stat">
+
+        <span class="samaia-stat-number">
+          £20–60
+        </span>
+
+        <span class="samaia-stat-label">
+          Average Per Person
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     STORY
+     ========================================================= -->
+
+<section
+  class="samaia-intro"
+  id="samaia-story"
+>
+
+  <div class="samaia-container samaia-intro-grid">
+
+
+    <div class="samaia-intro-image samaia-reveal">
+
+      <img
+        src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85"
+        alt="Traditional Georgian inspired cuisine"
+        loading="lazy"
+      >
+
+    </div>
+
+
+    <div class="samaia-intro-copy samaia-reveal">
+
+      <span class="samaia-eyebrow">
+        Welcome to Samaia
+      </span>
+
+      <h2>
+        A little piece of Georgia in London.
+      </h2>
+
+      <p>
+
+        Samaia is an intimate and relaxed Georgian
+        restaurant on Castelnau, Barnes.
+
+        Our kitchen celebrates the rich flavours,
+        generous portions and timeless traditions
+        of Georgian cooking.
+
+      </p>
+
+      <p>
+
+        From freshly prepared khinkali and golden
+        khachapuri to beautifully grilled meats and
+        comforting homemade dishes, every plate is
+        made to bring people together around the table.
+
+      </p>
+
+      <div class="samaia-intro-signature">
+
+        Made with heart.
+        Served with warmth.
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SIGNATURE DISHES
+     ========================================================= -->
+
+<section class="samaia-signature">
+
+  <div class="samaia-container">
+
+    <div class="samaia-section-heading samaia-reveal">
+
+      <span class="samaia-eyebrow">
+        From Our Kitchen
+      </span>
+
+      <h2>
+        Taste the dishes everyone talks about.
+      </h2>
+
+      <p>
+
+        Discover some of the Georgian favourites
+        that have become part of the Samaia experience.
+
+      </p>
+
+    </div>
+
+
+    <div class="samaia-dishes">
+
+
+      <article class="samaia-dish samaia-reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1000&q=85"
+          alt="Khinkali style Georgian dumplings"
+          loading="lazy"
+        >
+
+        <div class="samaia-dish-content">
+
+          <span class="samaia-dish-tag">
+            Georgian Classic
+          </span>
+
+          <h3>
+            Khinkali
+          </h3>
+
+          <p>
+
+            Traditional Georgian dumplings,
+            filled with rich and flavourful fillings.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="samaia-dish samaia-reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?auto=format&fit=crop&w=1000&q=85"
+          alt="Khachapuri cheese bread"
+          loading="lazy"
+        >
+
+        <div class="samaia-dish-content">
+
+          <span class="samaia-dish-tag">
+            Guest Favourite
+          </span>
+
+          <h3>
+            Khachapuri
+          </h3>
+
+          <p>
+
+            Golden Georgian cheese bread,
+            baked warm and made for sharing.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="samaia-dish samaia-reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=85"
+          alt="Grilled meat dish"
+          loading="lazy"
+        >
+
+        <div class="samaia-dish-content">
+
+          <span class="samaia-dish-tag">
+            From The Grill
+          </span>
+
+          <h3>
+            Mtsvadi
+          </h3>
+
+          <p>
+
+            Georgian-style grilled meat with
+            red onion, pomegranate and parsley.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     COMPLETE MENU
+     ========================================================= -->
+
+<section
+  class="samaia-menu-section"
+  id="samaia-menu"
+>
+
+  <div class="samaia-container">
+
+
+    <div class="samaia-menu-header">
+
+      <div>
+
+        <span class="samaia-eyebrow">
+          Explore
+        </span>
+
+        <h2>
+          Our Menu
+        </h2>
+
+      </div>
+
+
+      <div class="samaia-menu-tabs">
+
+        <button
+          class="samaia-menu-tab active"
+          data-filter="all"
+          type="button"
+        >
+          All
+        </button>
+
+        <button
+          class="samaia-menu-tab"
+          data-filter="soups"
+          type="button"
+        >
+          Soups
+        </button>
+
+        <button
+          class="samaia-menu-tab"
+          data-filter="small-plates"
+          type="button"
+        >
+          Small Plates
+        </button>
+
+        <button
+          class="samaia-menu-tab"
+          data-filter="salads"
+          type="button"
+        >
+          Salads
+        </button>
+
+        <button
+          class="samaia-menu-tab"
+          data-filter="fish"
+          type="button"
+        >
+          Fish
+        </button>
+
+        <button
+          class="samaia-menu-tab"
+          data-filter="large-plates"
+          type="button"
+        >
+          Large Plates
+        </button>
+
+        <button
+          class="samaia-menu-tab"
+          data-filter="khinkali"
+          type="button"
+        >
+          Khinkali
+        </button>
+
+        <button
+          class="samaia-menu-tab"
+          data-filter="khachapuri"
+          type="button"
+        >
+          Khachapuri
+        </button>
+
+        <button
+          class="samaia-menu-tab"
+          data-filter="accompaniments"
+          type="button"
+        >
+          Accompaniments
+        </button>
+
+        <button
+          class="samaia-menu-tab"
+          data-filter="sauces"
+          type="button"
+        >
+          Sauces
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="samaia-menu-grid">
+
+
+      <!-- SOUPS -->
+
+      <article
+        class="samaia-menu-item"
+        data-category="soups"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Borscht
+          </h3>
+
+          <span class="samaia-menu-price">
+            £10
+          </span>
+
+        </div>
+
+        <p>
+          Cabbage, beetroot, carrot, potato.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="soups"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Soup Kharcho
+          </h3>
+
+          <span class="samaia-menu-price">
+            £12
+          </span>
+
+        </div>
+
+        <p>
+          Beef short rib, tomato, red chilli, rice.
+        </p>
+
+      </article>
+
+
+      <!-- SMALL PLATES -->
+
+      <article
+        class="samaia-menu-item"
+        data-category="small-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Mini Chebureki
+          </h3>
+
+          <span class="samaia-menu-price">
+            £14
+          </span>
+
+        </div>
+
+        <p>
+          Minced beef short rib, fried pastry.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="small-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Mini Lamb Kebab
+          </h3>
+
+          <span class="samaia-menu-price">
+            £15
+          </span>
+
+        </div>
+
+        <p>
+          Lavash, satsebela.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="small-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Aubergine Pkhali
+          </h3>
+
+          <span class="samaia-menu-price">
+            £14
+          </span>
+
+        </div>
+
+        <p>
+          Walnut rolls.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="small-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Pkhali
+          </h3>
+
+          <span class="samaia-menu-price">
+            £12
+          </span>
+
+        </div>
+
+        <p>
+          Spinach, beetroot, carrot, walnut pâtés.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="small-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Red Pepper Pkhali
+          </h3>
+
+          <span class="samaia-menu-price">
+            £14
+          </span>
+
+        </div>
+
+        <p>
+          Walnut rolls.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="small-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Crispy Oyster Mushrooms
+          </h3>
+
+          <span class="samaia-menu-price">
+            £10
+          </span>
+
+        </div>
+
+        <p>
+          Kindzmari sauce.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="small-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Gebjalia
+          </h3>
+
+          <span class="samaia-menu-price">
+            £16
+          </span>
+
+        </div>
+
+        <p>
+          Soft cheese rolls, ricotta, mint.
+        </p>
+
+      </article>
+
+
+      <!-- SALADS -->
+
+      <article
+        class="samaia-menu-item"
+        data-category="salads"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Georgian Salad
+          </h3>
+
+          <span class="samaia-menu-price">
+            £16
+          </span>
+
+        </div>
+
+        <p>
+          Baby tomato, cucumber, onion, parsley,
+          kakhuri oil, gudis cheese.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="salads"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Walnut Salad
+          </h3>
+
+          <span class="samaia-menu-price">
+            £15
+          </span>
+
+        </div>
+
+        <p>
+          Plum tomato, cucumber, onion, parsley,
+          chilli, walnut, vinegar.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="salads"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Tomato Salad
+          </h3>
+
+          <span class="samaia-menu-price">
+            £15
+          </span>
+
+        </div>
+
+        <p>
+          Plum tomatoes, guruli adjika,
+          long green pepper, red onion, hazelnut.
+        </p>
+
+      </article>
+
+
+      <!-- FISH -->
+
+      <article
+        class="samaia-menu-item"
+        data-category="fish"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Seabass
+          </h3>
+
+          <span class="samaia-menu-price">
+            £24
+          </span>
+
+        </div>
+
+        <p>
+          Tarragon, lemon.
+          <br>
+          <strong>Please allow 30 minutes for this dish.</strong>
+        </p>
+
+      </article>
+
+
+      <!-- LARGE PLATES -->
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Mtsvadi — Pork
+          </h3>
+
+          <span class="samaia-menu-price">
+            £25
+          </span>
+
+        </div>
+
+        <p>
+          Red onion, pomegranate, parsley.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Mtsvadi — Chicken
+          </h3>
+
+          <span class="samaia-menu-price">
+            £25
+          </span>
+
+        </div>
+
+        <p>
+          Red onion, pomegranate, parsley.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Mtsvadi — Lamb
+          </h3>
+
+          <span class="samaia-menu-price">
+            £28
+          </span>
+
+        </div>
+
+        <p>
+          Red onion, pomegranate, parsley.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Ojakhuri — Pork
+          </h3>
+
+          <span class="samaia-menu-price">
+            £21
+          </span>
+
+        </div>
+
+        <p>
+          Fried potatoes, onion, red pepper and pomegranate.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Ojakhuri — Chicken
+          </h3>
+
+          <span class="samaia-menu-price">
+            £21
+          </span>
+
+        </div>
+
+        <p>
+          Fried potatoes, onion, red pepper and pomegranate.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Ojakhuri — Lamb
+          </h3>
+
+          <span class="samaia-menu-price">
+            £23
+          </span>
+
+        </div>
+
+        <p>
+          Fried potatoes, onion, red pepper and pomegranate.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Ojakhuri — Mushroom
+          </h3>
+
+          <span class="samaia-menu-price">
+            £19
+          </span>
+
+        </div>
+
+        <p>
+          Fried potatoes, onion, red pepper and pomegranate.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Lamb Kebab
+          </h3>
+
+          <span class="samaia-menu-price">
+            £23
+          </span>
+
+        </div>
+
+        <p>
+          Lavash, red onion, parsley,
+          pomegranate, sumac.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Corn Fed Baby Chicken Tabaka
+          </h3>
+
+          <span class="samaia-menu-price">
+            £18
+          </span>
+
+        </div>
+
+        <p>
+          Dry adjika.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Garlic Chkmeruli
+          </h3>
+
+          <span class="samaia-menu-price">
+            £18
+          </span>
+
+        </div>
+
+        <p>
+          Georgian-style chicken with garlic.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Ostri
+          </h3>
+
+          <span class="samaia-menu-price">
+            £24
+          </span>
+
+        </div>
+
+        <p>
+          Braised beef stew, tomato sauce, onion.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Lobio
+          </h3>
+
+          <span class="samaia-menu-price">
+            £14
+          </span>
+
+        </div>
+
+        <p>
+          Red kidney bean stew.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Ajapsandali
+          </h3>
+
+          <span class="samaia-menu-price">
+            £15
+          </span>
+
+        </div>
+
+        <p>
+          Aubergine, romano pepper, carrot, tomato.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Grilled Aubergine
+          </h3>
+
+          <span class="samaia-menu-price">
+            £17
+          </span>
+
+        </div>
+
+        <p>
+          Tahini matsoni, roasted garlic,
+          green adjika, pistachio, pomegranate.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="large-plates"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Chanaxi
+          </h3>
+
+          <span class="samaia-menu-price">
+            £25
+          </span>
+
+        </div>
+
+        <p>
+          Braised lamb shoulder, baby red pepper,
+          baby aubergines, new potatoes.
+        </p>
+
+      </article>
+
+
+      <!-- KHINKALI -->
+
+      <article
+        class="samaia-menu-item"
+        data-category="khinkali"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Beef Short Rib & Pork Belly
+          </h3>
+
+          <span class="samaia-menu-price">
+            £17
+          </span>
+
+        </div>
+
+        <p>
+          Traditional Georgian dumplings.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="khinkali"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Lamb Shoulder
+          </h3>
+
+          <span class="samaia-menu-price">
+            £19
+          </span>
+
+        </div>
+
+        <p>
+          Traditional Georgian dumplings.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="khinkali"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Mini Beef
+          </h3>
+
+          <span class="samaia-menu-price">
+            £16
+          </span>
+
+        </div>
+
+        <p>
+          Mixed peppercorn sauce.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="khinkali"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Mini Cheese
+          </h3>
+
+          <span class="samaia-menu-price">
+            £15
+          </span>
+
+        </div>
+
+        <p>
+          Whipped onion sauce, parmesan crisp.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="khinkali"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Mini Mushroom
+          </h3>
+
+          <span class="samaia-menu-price">
+            £20
+          </span>
+
+        </div>
+
+        <p>
+          Truffle and porcini sauce, fried shallots.
+        </p>
+
+      </article>
+
+
+      <!-- KHACHAPURI -->
+
+      <article
+        class="samaia-menu-item"
+        data-category="khachapuri"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Acharuli Classic
+          </h3>
+
+          <span class="samaia-menu-price">
+            £20
+          </span>
+
+        </div>
+
+        <p>
+          Traditional Georgian cheese bread.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="khachapuri"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Acharuli Spinach
+          </h3>
+
+          <span class="samaia-menu-price">
+            £22
+          </span>
+
+        </div>
+
+        <p>
+          Georgian cheese bread with spinach.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="khachapuri"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Acharuli Smoked Pork
+          </h3>
+
+          <span class="samaia-menu-price">
+            £24
+          </span>
+
+        </div>
+
+        <p>
+          Georgian cheese bread with smoked pork.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="khachapuri"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Megruli
+          </h3>
+
+          <span class="samaia-menu-price">
+            £18
+          </span>
+
+        </div>
+
+        <p>
+          Traditional Georgian cheese bread.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="khachapuri"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Imeruli
+          </h3>
+
+          <span class="samaia-menu-price">
+            £16
+          </span>
+
+        </div>
+
+        <p>
+          Traditional Georgian cheese bread.
+        </p>
+
+      </article>
+
+
+      <!-- ACCOMPANIMENTS -->
+
+      <article
+        class="samaia-menu-item"
+        data-category="accompaniments"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Bread
+          </h3>
+
+          <span class="samaia-menu-price">
+            £5
+          </span>
+
+        </div>
+
+        <p>
+          Served with adjika butter.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="accompaniments"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Jonjoli
+          </h3>
+
+          <span class="samaia-menu-price">
+            £7
+          </span>
+
+        </div>
+
+        <p>
+          Traditional Georgian accompaniment.
+        </p>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="accompaniments"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Chips
+          </h3>
+
+          <span class="samaia-menu-price">
+            £5
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="accompaniments"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Mixed Pickles
+          </h3>
+
+          <span class="samaia-menu-price">
+            £4
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="accompaniments"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            New Potatoes
+          </h3>
+
+          <span class="samaia-menu-price">
+            £6
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- SAUCES -->
+
+      <article
+        class="samaia-menu-item"
+        data-category="sauces"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Adjika
+          </h3>
+
+          <span class="samaia-menu-price">
+            £3.50
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="sauces"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Satsebela
+          </h3>
+
+          <span class="samaia-menu-price">
+            £3
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="sauces"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Tkemali
+          </h3>
+
+          <span class="samaia-menu-price">
+            £3.50
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article
+        class="samaia-menu-item"
+        data-category="sauces"
+      >
+
+        <div class="samaia-menu-item-top">
+
+          <h3>
+            Soured Cream
+          </h3>
+
+          <span class="samaia-menu-price">
+            £2
+          </span>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- MENU NOTES -->
+
+    <div class="samaia-menu-notes">
+
+      <p>
+        <strong>Khinkali:</strong>
+        Dishes in this section are served as they are ready.
+        Please allow up to 30 minutes.
+        Portion of 5.
+      </p>
+
+      <p>
+        <strong>Khachapuri:</strong>
+        Dishes in this section are served as they are ready.
+        Please allow up to 30 minutes.
+      </p>
+
+      <p>
+        Please let us know if you have any allergies or intolerances.
+      </p>
+
+      <p>
+        A discretionary 12.5% service charge will be added to your bill.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     EXPERIENCE
+     ========================================================= -->
+
+<section class="samaia-experience">
+
+  <div class="samaia-container">
+
+    <div class="samaia-experience-inner samaia-reveal">
+
+      <span class="samaia-eyebrow">
+        Georgian Hospitality
+      </span>
+
+      <blockquote>
+
+        "Come for the food.
+        Stay for the warmth."
+
+      </blockquote>
+
+      <p>
+
+        At Samaia, dining is about more than
+        what's on the plate.
+
+        It's about sharing, celebrating and
+        enjoying the moment with the people
+        around you.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     REVIEWS
+     ========================================================= -->
+
+<section
+  class="samaia-reviews"
+  id="samaia-reviews"
+>
+
+  <div class="samaia-container">
+
+
+    <div class="samaia-reviews-heading samaia-reveal">
+
+      <span class="samaia-eyebrow">
+        Our Guests
+      </span>
+
+      <h2>
+        Loved by our guests.
+      </h2>
+
+      <div class="samaia-review-rating">
+        ★★★★★
+      </div>
+
+      <div class="samaia-review-count">
+        4.8 out of 5 · 838 Google Reviews
+      </div>
+
+    </div>
+
+
+    <div class="samaia-review-grid">
+
+
+      <article class="samaia-review samaia-reveal">
+
+        <div class="samaia-review-stars">
+          ★★★★★
+        </div>
+
+        <p>
+
+          "The food is incredible and the vibes
+          are fun yet cozy. Every dish we had
+          was amazing."
+
+        </p>
+
+        <div class="samaia-review-author">
+          — Sophie Fertel
+        </div>
+
+      </article>
+
+
+      <article class="samaia-review samaia-reveal">
+
+        <div class="samaia-review-stars">
+          ★★★★★
+        </div>
+
+        <p>
+
+          "The Khinkalis and the Khachapuri
+          were particularly amazing.
+          The staff was also very nice."
+
+        </p>
+
+        <div class="samaia-review-author">
+          — Kwinti The Explorer
+        </div>
+
+      </article>
+
+
+      <article class="samaia-review samaia-reveal">
+
+        <div class="samaia-review-stars">
+          ★★★★★
+        </div>
+
+        <p>
+
+          "The khinkali were juicy and full
+          of flavour. Cozy vibe, great food —
+          definitely coming back."
+
+        </p>
+
+        <div class="samaia-review-author">
+          — Oleg Kozlov
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     GALLERY
+     ========================================================= -->
+
+<section
+  class="samaia-gallery"
+  id="samaia-gallery"
+>
+
+  <div class="samaia-gallery-item">
+
+    <img
+      src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1400&q=85"
+      alt="Restaurant food"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="samaia-gallery-item">
+
+    <img
+      src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+      alt="Traditional cuisine"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="samaia-gallery-item">
+
+    <img
+      src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1000&q=85"
+      alt="Restaurant atmosphere"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="samaia-gallery-item">
+
+    <img
+      src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85"
+      alt="Restaurant dining"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <div class="samaia-gallery-item">
+
+    <img
+      src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
+      alt="Restaurant interior"
+      loading="lazy"
+    >
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESERVATION / CONTACT
+     ========================================================= -->
+
+<section
+  class="samaia-reservation"
+  id="samaia-contact"
+>
+
+  <div class="samaia-container samaia-reservation-grid">
+
+
+    <div class="samaia-reveal">
+
+      <span class="samaia-eyebrow">
+        Your Table Awaits
+      </span>
+
+      <h2>
+        Make your next meal a Georgian experience.
+      </h2>
+
+      <p>
+
+        Join us at Samaia for traditional food,
+        warm hospitality and memorable moments.
+
+      </p>
+
+      <button
+        class="samaia-btn samaia-btn-primary samaia-open-modal"
+        type="button"
+      >
+        Request a Reservation
+      </button>
+
+    </div>
+
+
+    <div class="samaia-reservation-info samaia-reveal">
+
+
+      <div class="samaia-contact-row">
+
+        <span class="samaia-contact-label">
+          Visit Us
+        </span>
+
+        <div class="samaia-contact-value">
+
+          195 Castelnau<br>
+          London SW13 9ER<br>
+          United Kingdom
+
+        </div>
+
+      </div>
+
+
+      <div class="samaia-contact-row">
+
+        <span class="samaia-contact-label">
+          Call Us
+        </span>
+
+        <div class="samaia-contact-value">
+
+          <a href="tel:+442087030858">
+
+            +44 20 8703 0858
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="samaia-contact-row">
+
+        <span class="samaia-contact-label">
+          Website
+        </span>
+
+        <div class="samaia-contact-value">
+
+          <a
+            href="https://samaiarestaurant.co.uk"
+            target="_blank"
+            rel="noopener"
+          >
+
+            samaiarestaurant.co.uk
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="samaia-contact-row">
+
+        <span class="samaia-contact-label">
+          Dining
+        </span>
+
+        <div class="samaia-contact-value">
+
+          Dine-in · Takeaway
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="samaia-footer">
+
+  <div class="samaia-container">
+
+
+    <div class="samaia-footer-grid">
+
+
+      <div class="samaia-footer-brand">
+
+        <div class="samaia-footer-logo">
+          SAMAIA
+        </div>
+
+        <p>
+
+          Authentic Georgian cuisine,
+          warm hospitality and memorable
+          moments in Barnes, London.
+
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Explore
+        </h4>
+
+        <div class="samaia-footer-links">
+
+          <a href="#samaia-home">
+            Home
+          </a>
+
+          <a href="#samaia-story">
+            Our Story
+          </a>
+
+          <a href="#samaia-menu">
+            Menu
+          </a>
+
+          <a href="#samaia-gallery">
+            Gallery
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Visit
+        </h4>
+
+        <div class="samaia-footer-links">
+
+          <a href="tel:+442087030858">
+            +44 20 8703 0858
+          </a>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=195+Castelnau+London+SW13+9ER"
+            target="_blank"
+            rel="noopener"
+          >
+            Get Directions
+          </a>
+
+          <a
+            href="https://samaiarestaurant.co.uk"
+            target="_blank"
+            rel="noopener"
+          >
+            Official Website
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="samaia-footer-bottom">
+
+      <span>
+
+        ©
+        <span id="samaiaYear"></span>
+        Samaia Georgian Restaurant
+
+      </span>
+
+      <span>
+
+        The Taste of Sakartvelo
+
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     RESERVATION MODAL
+     ========================================================= -->
+
+<div
+  class="samaia-modal"
+  id="samaiaModal"
+  aria-hidden="true"
+>
+
+  <div class="samaia-modal-box">
+
+
+    <button
+      class="samaia-modal-close"
+      id="samaiaModalClose"
+      type="button"
+      aria-label="Close"
+    >
+      ×
+    </button>
+
+
+    <span class="samaia-eyebrow">
+      Reservations
+    </span>
+
+
+    <h2>
+      Reserve Your Table
+    </h2>
+
+
+    <p>
+
+      Send us your reservation request.
+      Our team will get back to you to
+      confirm availability.
+
+    </p>
+
+
+    <form
+      class="samaia-form"
+      id="samaiaReservationForm"
+    >
+
+
+      <div class="samaia-form-row">
+
+
+        <div>
+
+          <label for="samaiaName">
+            Your Name
+          </label>
+
+          <input
+            type="text"
+            id="samaiaName"
+            required
+            placeholder="Your name"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label for="samaiaGuests">
+            Guests
+          </label>
+
+          <select
+            id="samaiaGuests"
+            required
+          >
+
+            <option value="">
+              Select
+            </option>
+
+            <option>
+              1 Guest
+            </option>
+
+            <option>
+              2 Guests
+            </option>
+
+            <option>
+              3 Guests
+            </option>
+
+            <option>
+              4 Guests
+            </option>
+
+            <option>
+              5 Guests
+            </option>
+
+            <option>
+              6+ Guests
+            </option>
+
+          </select>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="samaia-form-row">
+
+
+        <div>
+
+          <label for="samaiaDate">
+            Date
+          </label>
+
+          <input
+            type="date"
+            id="samaiaDate"
+            required
+          >
+
+        </div>
+
+
+        <div>
+
+          <label for="samaiaTime">
+            Preferred Time
+          </label>
+
+          <input
+            type="time"
+            id="samaiaTime"
+            required
+          >
+
+        </div>
+
+
+      </div>
+
+
+      <div>
+
+        <label for="samaiaPhone">
+          Phone Number
+        </label>
+
+        <input
+          type="tel"
+          id="samaiaPhone"
+          required
+          placeholder="+44..."
+        >
+
+      </div>
+
+
+      <div>
+
+        <label for="samaiaMessage">
+          Special Request
+        </label>
+
+        <textarea
+          id="samaiaMessage"
+          placeholder="Birthday, celebration, dietary request..."
+        ></textarea>
+
+      </div>
+
+
+      <button
+        class="samaia-btn samaia-btn-primary"
+        type="submit"
+      >
+
+        Send Reservation Request
+
+      </button>
+
+
+      <div
+        class="samaia-form-message"
+        id="samaiaFormMessage"
+      >
+
+        Thank you!
+        Your reservation request has been received.
+
+        Please call
+        +44 20 8703 0858
+        to confirm your booking.
+
+      </div>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+(function () {
+
+  "use strict";
+
+
+  /* =======================================================
+     HEADER SCROLL
+     ======================================================= */
+
+  const header =
+    document.getElementById(
+      "samaiaHeader"
+    );
+
+
+  function updateHeader() {
+
+    if (
+      window.scrollY > 40
+    ) {
+
+      header.classList.add(
+        "is-scrolled"
+      );
+
+    } else {
+
+      header.classList.remove(
+        "is-scrolled"
+      );
+
+    }
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    updateHeader
+  );
+
+
+  updateHeader();
+
+
+  /* =======================================================
+     MOBILE NAVIGATION
+     ======================================================= */
+
+  const menuToggle =
+    document.getElementById(
+      "samaiaMenuToggle"
+    );
+
+
+  const navLinks =
+    document.getElementById(
+      "samaiaNavLinks"
+    );
+
+
+  menuToggle.addEventListener(
+    "click",
+    function () {
+
+      navLinks.classList.toggle(
+        "open"
+      );
+
+    }
+  );
+
+
+  navLinks
+    .querySelectorAll("a")
+    .forEach(
+      function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navLinks.classList.remove(
+              "open"
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  /* =======================================================
+     SMOOTH SCROLL
+     ======================================================= */
+
+  document
+    .querySelectorAll(
+      '.samaia-site a[href^="#"]'
+    )
+    .forEach(
+      function (anchor) {
+
+        anchor.addEventListener(
+          "click",
+          function (event) {
+
+            const targetId =
+              this.getAttribute(
+                "href"
+              );
+
+
+            if (
+              targetId === "#" ||
+              !document.querySelector(
+                targetId
+              )
+            ) {
+
+              return;
+
+            }
+
+
+            event.preventDefault();
+
+
+            document
+              .querySelector(
+                targetId
+              )
+              .scrollIntoView({
+
+                behavior:
+                  "smooth",
+
+                block:
+                  "start"
+
+              });
+
+          }
+        );
+
+      }
+    );
+
+
+  /* =======================================================
+     MENU FILTER
+     ======================================================= */
+
+  const menuTabs =
+    document.querySelectorAll(
+      ".samaia-menu-tab"
+    );
+
+
+  const menuItems =
+    document.querySelectorAll(
+      ".samaia-menu-item"
+    );
+
+
+  menuTabs.forEach(
+    function (tab) {
+
+      tab.addEventListener(
+        "click",
+        function () {
+
+          const filter =
+            this.getAttribute(
+              "data-filter"
+            );
+
+
+          menuTabs.forEach(
+            function (item) {
+
+              item.classList.remove(
+                "active"
+              );
+
+            }
+          );
+
+
+          this.classList.add(
+            "active"
+          );
+
+
+          menuItems.forEach(
+            function (item) {
+
+              const category =
+                item.getAttribute(
+                  "data-category"
+                );
+
+
+              if (
+                filter === "all" ||
+                category === filter
+              ) {
+
+                item.classList.remove(
+                  "hidden"
+                );
+
+              } else {
+
+                item.classList.add(
+                  "hidden"
+                );
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+  /* =======================================================
+     RESERVATION MODAL
+     ======================================================= */
+
+  const modal =
+    document.getElementById(
+      "samaiaModal"
+    );
+
+
+  const modalClose =
+    document.getElementById(
+      "samaiaModalClose"
+    );
+
+
+  const openButtons =
+    document.querySelectorAll(
+      ".samaia-open-modal"
+    );
+
+
+  function openModal() {
+
+    modal.classList.add(
+      "active"
+    );
+
+
+    modal.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    document.body.style.overflow =
+      "hidden";
+
+  }
+
+
+  function closeModal() {
+
+    modal.classList.remove(
+      "active"
+    );
+
+
+    modal.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+    document.body.style.overflow =
+      "";
+
+  }
+
+
+  openButtons.forEach(
+    function (button) {
+
+      button.addEventListener(
+        "click",
+        openModal
+      );
+
+    }
+  );
+
+
+  modalClose.addEventListener(
+    "click",
+    closeModal
+  );
+
+
+  modal.addEventListener(
+    "click",
+    function (event) {
+
+      if (
+        event.target === modal
+      ) {
+
+        closeModal();
+
+      }
+
+    }
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+
+      if (
+        event.key === "Escape" &&
+        modal.classList.contains(
+          "active"
+        )
+      ) {
+
+        closeModal();
+
+      }
+
+    }
+  );
+
+
+  /* =======================================================
+     RESERVATION FORM DEMO
+     ======================================================= */
+
+  const reservationForm =
+    document.getElementById(
+      "samaiaReservationForm"
+    );
+
+
+  const formMessage =
+    document.getElementById(
+      "samaiaFormMessage"
+    );
+
+
+  reservationForm.addEventListener(
+    "submit",
+    function (event) {
+
+      event.preventDefault();
+
+
+      formMessage.style.display =
+        "block";
+
+
+      reservationForm.reset();
+
+    }
+  );
+
+
+  /* =======================================================
+     SCROLL REVEAL
+     ======================================================= */
+
+  const revealElements =
+    document.querySelectorAll(
+      ".samaia-reveal"
+    );
+
+
+  if (
+    "IntersectionObserver"
+    in window
+  ) {
+
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        function (entries) {
+
+          entries.forEach(
+            function (entry) {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target.classList.add(
+                  "visible"
+                );
+
+
+                revealObserver.unobserve(
+                  entry.target
+                );
+
+              }
+
+            }
+          );
+
+        },
+
+        {
+          threshold:
+            0.12
+        }
+
+      );
+
+
+    revealElements.forEach(
+      function (element) {
+
+        revealObserver.observe(
+          element
+        );
+
+      }
+    );
+
+
+  } else {
+
+
+    revealElements.forEach(
+      function (element) {
+
+        element.classList.add(
+          "visible"
+        );
+
+      }
+    );
+
+
+  }
+
+
+  /* =======================================================
+     CURRENT YEAR
+     ======================================================= */
+
+  const yearElement =
+    document.getElementById(
+      "samaiaYear"
+    );
+
+
+  if (
+    yearElement
+  ) {
+
+    yearElement.textContent =
+      new Date().getFullYear();
+
+  }
+
+
+  /* =======================================================
+     RESERVATION MINIMUM DATE
+     ======================================================= */
+
+  const dateInput =
+    document.getElementById(
+      "samaiaDate"
+    );
+
+
+  if (
+    dateInput
+  ) {
+
+    const today =
+      new Date();
+
+
+    const year =
+      today.getFullYear();
+
+
+    const month =
+      String(
+        today.getMonth() + 1
+      )
+      .padStart(
+        2,
+        "0"
+      );
+
+
+    const day =
+      String(
+        today.getDate()
+      )
+      .padStart(
+        2,
+        "0"
+      );
+
+
+    dateInput.min =
+      year +
+      "-" +
+      month +
+      "-" +
+      day;
+
+  }
+
+
+})();
+
+</script>
+
+</div>
