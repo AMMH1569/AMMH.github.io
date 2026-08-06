@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Zin Zin Pharmacy</title>
+  <meta name="description" content="Contact Zin Zin Pharmacy — address, phone, email and opening hours, plus a contact form for product questions." />
+  <meta name="keywords" content="pharmacy, weight management, wellness products, vitamins, supplements, Zin Zin Pharmacy" />
+  <meta name="author" content="Zin Zin Pharmacy" />
+  <meta property="og:title" content="Contact Us | Zin Zin Pharmacy" />
+  <meta property="og:description" content="Contact Zin Zin Pharmacy — address, phone, email and opening hours, plus a contact form for product questions." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <!-- Google Fonts: Poppins (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- ============ HEADER / NAVIGATION ============ -->
+<header class="header">
+  <div class="topbar">
+    <div class="container">
+      <div><span><i class="fa-solid fa-phone"></i>+95 9 123 456 789</span><span><i class="fa-solid fa-envelope"></i>care@zinzinpharmacy.com</span></div>
+      <div><span><i class="fa-solid fa-truck-fast"></i>Free delivery on orders over $50</span></div>
+    </div>
+  </div>
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Zin Zin Pharmacy logo" width="42" height="42" />
+        <span>Zin Zin Pharmacy<small>Health &amp; Wellness</small></span>
+      </a>
+      <!-- CSS-only mobile menu toggle -->
+      <input type="checkbox" id="navToggle" class="nav-toggle" hidden />
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="shop.html#categories">Categories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="is-active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="cart.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+        <a href="shop.html" class="btn btn--primary btn--sm">Shop Now</a>
+        <label for="navToggle" class="hamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></label>
+      </div>
+    </nav>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p style="color:var(--muted);margin-top:10px">We are happy to answer your questions.</p>
+    <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+  </div>
+</section>
+<main class="section">
+  <div class="container contact-grid">
+    <div class="grid" style="gap:16px;align-content:start">
+      <div class="info-card"><i class="fa-solid fa-location-dot"></i><div><h4>Address</h4><p>No. 25, Bogyoke Aung San Road, Yangon, Myanmar</p></div></div>
+      <div class="info-card"><i class="fa-solid fa-phone"></i><div><h4>Phone</h4><p>+95 9 123 456 789</p></div></div>
+      <div class="info-card"><i class="fa-solid fa-envelope"></i><div><h4>Email</h4><p>care@zinzinpharmacy.com</p></div></div>
+      <div class="info-card"><i class="fa-regular fa-clock"></i><div><h4>Opening Hours</h4><p>Mon - Sat: 8:00 AM - 9:00 PM<br />Sunday: 9:00 AM - 6:00 PM</p></div></div>
+      <div class="info-card"><i class="fa-brands fa-facebook-messenger"></i><div><h4>Live Chat</h4><p>Message us any time — we reply within minutes during opening hours.</p></div></div>
+    </div>
+    <form class="form-card" action="#" method="post">
+      <h2 style="font-size:1.4rem;margin-bottom:18px">Send us a message</h2>
+      <div class="field-row">
+        <div class="field"><label for="cname">Full Name</label><input class="input" type="text" id="cname" name="name" placeholder="Your name" required /></div>
+        <div class="field"><label for="cemail">Email</label><input class="input" type="email" id="cemail" name="email" placeholder="you@email.com" required /></div>
+      </div>
+      <div class="field"><label for="cphone">Phone</label><input class="input" type="tel" id="cphone" name="phone" placeholder="+95 9 ..." /></div>
+      <div class="field"><label for="cmsg">Message</label><textarea class="input" id="cmsg" name="message" placeholder="How can we help?" required></textarea></div>
+      <button class="btn btn--primary btn--block" type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+</main>
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <img src="images/logo.png" alt="Zin Zin Pharmacy logo" width="42" height="42" />
+          <span>Zin Zin Pharmacy<small>Health &amp; Wellness</small></span>
+        </div>
+        <p>A modern wellness pharmacy offering carefully selected weight management and healthy lifestyle products for women and men.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="shop.html">Weight Management</a></li>
+          <li><a href="shop.html">Vitamins</a></li>
+          <li><a href="shop.html">Protein Products</a></li>
+          <li><a href="shop.html">Healthy Snacks</a></li>
+          <li><a href="shop.html">Herbal Tea</a></li>
+          <li><a href="shop.html">Personal Care</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Stay Informed</h4>
+        <p>Wellness tips and product updates, straight to your inbox.</p>
+        <form class="newsletter" action="#" method="post">
+          <label for="nl" class="sr-only" hidden>Email</label>
+          <input class="input" type="email" id="nl" name="email" placeholder="Your email" required />
+          <button class="btn btn--primary btn--sm" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p style="margin-top:14px"><i class="fa-solid fa-location-dot" style="color:var(--green)"></i> No. 25, Bogyoke Road, Yangon</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Zin Zin Pharmacy. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms &amp; Conditions</a> &nbsp;&middot;&nbsp; <a href="faq.html">Support</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

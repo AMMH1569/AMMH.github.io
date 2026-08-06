@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop Wellness Products | Zin Zin Pharmacy</title>
+  <meta name="description" content="Browse weight management shakes, vitamins, protein products, herbal teas and supplements at Zin Zin Pharmacy." />
+  <meta name="keywords" content="pharmacy, weight management, wellness products, vitamins, supplements, Zin Zin Pharmacy" />
+  <meta name="author" content="Zin Zin Pharmacy" />
+  <meta property="og:title" content="Shop Wellness Products | Zin Zin Pharmacy" />
+  <meta property="og:description" content="Browse weight management shakes, vitamins, protein products, herbal teas and supplements at Zin Zin Pharmacy." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <!-- Google Fonts: Poppins (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- ============ HEADER / NAVIGATION ============ -->
+<header class="header">
+  <div class="topbar">
+    <div class="container">
+      <div><span><i class="fa-solid fa-phone"></i>+95 9 123 456 789</span><span><i class="fa-solid fa-envelope"></i>care@zinzinpharmacy.com</span></div>
+      <div><span><i class="fa-solid fa-truck-fast"></i>Free delivery on orders over $50</span></div>
+    </div>
+  </div>
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Zin Zin Pharmacy logo" width="42" height="42" />
+        <span>Zin Zin Pharmacy<small>Health &amp; Wellness</small></span>
+      </a>
+      <!-- CSS-only mobile menu toggle -->
+      <input type="checkbox" id="navToggle" class="nav-toggle" hidden />
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="is-active">Shop</a></li>
+        <li><a href="shop.html#categories">Categories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="cart.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+        <a href="shop.html" class="btn btn--primary btn--sm">Shop Now</a>
+        <label for="navToggle" class="hamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></label>
+      </div>
+    </nav>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="container">
+    <h1>Shop Wellness Products</h1>
+    <p style="color:var(--muted);margin-top:10px">Browse our full range of weight management and healthy lifestyle products.</p>
+    <p class="breadcrumb"><a href="index.html">Home</a> / Shop</p>
+  </div>
+</section>
+<main class="section">
+  <div class="container shop-layout">
+    <aside class="sidebar" id="categories">
+      <h4>Categories</h4>
+      <label class="check"><input type="checkbox" /> Weight Management</label><label class="check"><input type="checkbox" /> Vitamins</label><label class="check"><input type="checkbox" /> Protein Products</label><label class="check"><input type="checkbox" /> Healthy Snacks</label><label class="check"><input type="checkbox" /> Herbal Tea</label><label class="check"><input type="checkbox" /> Supplements</label><label class="check"><input type="checkbox" /> Personal Care</label><label class="check"><input type="checkbox" /> Healthcare</label>
+      <h4>Price Range</h4>
+      <label class="check"><input type="checkbox" /> Under $15</label>
+      <label class="check"><input type="checkbox" /> $15 - $30</label>
+      <label class="check"><input type="checkbox" /> $30 - $50</label>
+      <label class="check"><input type="checkbox" /> Over $50</label>
+      <h4>Customer Rating</h4>
+      <label class="check"><input type="checkbox" /> 4 stars &amp; up</label>
+      <label class="check"><input type="checkbox" /> 3 stars &amp; up</label>
+      <a href="#" class="btn btn--primary btn--block btn--sm" style="margin-top:20px">Apply Filters</a>
+    </aside>
+    <div>
+      <div class="shop-toolbar">
+        <p style="font-size:.9rem;color:var(--muted)">Showing <strong>12</strong> of <strong>500+</strong> products</p>
+        <select class="input" style="width:auto"><option>Sort by: Popularity</option><option>Price: Low to High</option><option>Price: High to Low</option><option>Newest First</option></select>
+      </div>
+      <div class="grid g-3">
+        <article class="product-card">
+          <div class="product-media"><span class="badge">Best Seller</span>
+            <img src="images/products/products.jpg" alt="Slim Herbal Tea wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Herbal Tea</span>
+            <h3><a href="product-details.html">Slim Herbal Tea</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(60)</span></div>
+            <p>Gentle herbal blend to enjoy as part of a balanced daily routine.</p>
+            <div class="price-row">
+              <span class="price">$14.90<del>$19.90</del></span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/products/products.jpg" alt="Green Coffee Extract wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Weight Management</span>
+            <h3><a href="product-details.html">Green Coffee Extract</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span>(73)</span></div>
+            <p>Green coffee bean extract capsules for your wellness routine.</p>
+            <div class="price-row">
+              <span class="price">$24.50</span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-media"><span class="badge badge--navy">New</span>
+            <img src="images/products/products.jpg" alt="Whey Protein Shake wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Protein Products</span>
+            <h3><a href="product-details.html">Whey Protein Shake</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(86)</span></div>
+            <p>Smooth vanilla protein powder with 24g protein per serving.</p>
+            <div class="price-row">
+              <span class="price">$39.00<del>$45.00</del></span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/products/products.jpg" alt="Daily Fiber Powder wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Supplements</span>
+            <h3><a href="product-details.html">Daily Fiber Powder</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span>(99)</span></div>
+            <p>Unflavoured soluble fibre to support everyday digestive comfort.</p>
+            <div class="price-row">
+              <span class="price">$18.75</span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/products/products.jpg" alt="Vitamin B Complex wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Vitamins</span>
+            <h3><a href="product-details.html">Vitamin B Complex</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(112)</span></div>
+            <p>Eight essential B vitamins in one easy daily capsule.</p>
+            <div class="price-row">
+              <span class="price">$12.40</span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-media"><span class="badge">Sale</span>
+            <img src="images/products/products.jpg" alt="Collagen Beauty Drink wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Personal Care</span>
+            <h3><a href="product-details.html">Collagen Beauty Drink</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span>(125)</span></div>
+            <p>Hydrolysed marine collagen drink with vitamin C.</p>
+            <div class="price-row">
+              <span class="price">$29.90<del>$34.90</del></span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/products/products.jpg" alt="Omega 3 Fish Oil wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Supplements</span>
+            <h3><a href="product-details.html">Omega 3 Fish Oil</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(138)</span></div>
+            <p>High-purity fish oil softgels, molecularly distilled.</p>
+            <div class="price-row">
+              <span class="price">$21.00</span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/products/products.jpg" alt="Healthy Oats Bowl wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Healthy Snacks</span>
+            <h3><a href="product-details.html">Healthy Oats Bowl</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span>(151)</span></div>
+            <p>Wholegrain oats with seeds — a simple balanced breakfast.</p>
+            <div class="price-row">
+              <span class="price">$9.60</span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-media"><span class="badge badge--navy">Popular</span>
+            <img src="images/products/products.jpg" alt="Meal Replacement Shake wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Weight Management</span>
+            <h3><a href="product-details.html">Meal Replacement Shake</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(164)</span></div>
+            <p>Balanced nutrition shake with 21 vitamins and minerals.</p>
+            <div class="price-row">
+              <span class="price">$34.20<del>$39.00</del></span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/products/products.jpg" alt="Gentle Detox Tea wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Herbal Tea</span>
+            <h3><a href="product-details.html">Gentle Detox Tea</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span>(177)</span></div>
+            <p>Caffeine-free evening infusion with mint and lemongrass.</p>
+            <div class="price-row">
+              <span class="price">$16.30</span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-media"><span class="badge badge--navy">New</span>
+            <img src="images/products/products.jpg" alt="Apple Cider Gummies wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Healthcare</span>
+            <h3><a href="product-details.html">Apple Cider Gummies</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(190)</span></div>
+            <p>Apple cider vinegar gummies with a mild, pleasant taste.</p>
+            <div class="price-row">
+              <span class="price">$19.99</span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-media">
+            <img src="images/products/products.jpg" alt="L-Carnitine Liquid wellness product from Zin Zin Pharmacy" loading="lazy" width="400" height="300" />
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Weight Management</span>
+            <h3><a href="product-details.html">L-Carnitine Liquid</a></h3>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span>(203)</span></div>
+            <p>Liquid L-carnitine, a popular choice before activity.</p>
+            <div class="price-row">
+              <span class="price">$26.80<del>$31.00</del></span>
+              <a href="cart.html" class="btn btn--primary btn--sm"><i class="fa-solid fa-cart-plus"></i> Add</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <nav class="pagination" aria-label="Pagination">
+        <a href="#" class="is-active">1</a><a href="#">2</a><a href="#">3</a><a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+      </nav>
+    </div>
+  </div>
+</main>
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <img src="images/logo.png" alt="Zin Zin Pharmacy logo" width="42" height="42" />
+          <span>Zin Zin Pharmacy<small>Health &amp; Wellness</small></span>
+        </div>
+        <p>A modern wellness pharmacy offering carefully selected weight management and healthy lifestyle products for women and men.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="shop.html">Weight Management</a></li>
+          <li><a href="shop.html">Vitamins</a></li>
+          <li><a href="shop.html">Protein Products</a></li>
+          <li><a href="shop.html">Healthy Snacks</a></li>
+          <li><a href="shop.html">Herbal Tea</a></li>
+          <li><a href="shop.html">Personal Care</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Stay Informed</h4>
+        <p>Wellness tips and product updates, straight to your inbox.</p>
+        <form class="newsletter" action="#" method="post">
+          <label for="nl" class="sr-only" hidden>Email</label>
+          <input class="input" type="email" id="nl" name="email" placeholder="Your email" required />
+          <button class="btn btn--primary btn--sm" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p style="margin-top:14px"><i class="fa-solid fa-location-dot" style="color:var(--green)"></i> No. 25, Bogyoke Road, Yangon</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Zin Zin Pharmacy. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms &amp; Conditions</a> &nbsp;&middot;&nbsp; <a href="faq.html">Support</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

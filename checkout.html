@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Zin Zin Pharmacy</title>
+  <meta name="description" content="Complete your Zin Zin Pharmacy order with secure checkout and flexible payment options." />
+  <meta name="keywords" content="pharmacy, weight management, wellness products, vitamins, supplements, Zin Zin Pharmacy" />
+  <meta name="author" content="Zin Zin Pharmacy" />
+  <meta property="og:title" content="Checkout | Zin Zin Pharmacy" />
+  <meta property="og:description" content="Complete your Zin Zin Pharmacy order with secure checkout and flexible payment options." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <!-- Google Fonts: Poppins (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- ============ HEADER / NAVIGATION ============ -->
+<header class="header">
+  <div class="topbar">
+    <div class="container">
+      <div><span><i class="fa-solid fa-phone"></i>+95 9 123 456 789</span><span><i class="fa-solid fa-envelope"></i>care@zinzinpharmacy.com</span></div>
+      <div><span><i class="fa-solid fa-truck-fast"></i>Free delivery on orders over $50</span></div>
+    </div>
+  </div>
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Zin Zin Pharmacy logo" width="42" height="42" />
+        <span>Zin Zin Pharmacy<small>Health &amp; Wellness</small></span>
+      </a>
+      <!-- CSS-only mobile menu toggle -->
+      <input type="checkbox" id="navToggle" class="nav-toggle" hidden />
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="is-active">Shop</a></li>
+        <li><a href="shop.html#categories">Categories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="cart.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+        <a href="shop.html" class="btn btn--primary btn--sm">Shop Now</a>
+        <label for="navToggle" class="hamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></label>
+      </div>
+    </nav>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="container">
+    <h1>Checkout</h1>
+    
+    <p class="breadcrumb"><a href="index.html">Home</a> / <a href="cart.html">Cart</a> / Checkout</p>
+  </div>
+</section>
+<main class="section">
+  <div class="container" style="display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start">
+    <form class="form-card" action="#" method="post">
+      <h2 style="font-size:1.3rem;margin-bottom:18px">Billing &amp; Delivery Details</h2>
+      <div class="field-row">
+        <div class="field"><label for="fn">First Name</label><input class="input" type="text" id="fn" name="first_name" required /></div>
+        <div class="field"><label for="ln">Last Name</label><input class="input" type="text" id="ln" name="last_name" required /></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="em">Email</label><input class="input" type="email" id="em" name="email" required /></div>
+        <div class="field"><label for="ph">Phone</label><input class="input" type="tel" id="ph" name="phone" required /></div>
+      </div>
+      <div class="field"><label for="addr">Address</label><input class="input" type="text" id="addr" name="address" placeholder="Street, building, apartment" required /></div>
+      <div class="field-row">
+        <div class="field"><label for="city">City</label><input class="input" type="text" id="city" name="city" required /></div>
+        <div class="field"><label for="zip">Postal Code</label><input class="input" type="text" id="zip" name="zip" /></div>
+      </div>
+      <div class="field"><label for="notes">Order Notes (optional)</label><textarea class="input" id="notes" name="notes" placeholder="Delivery instructions"></textarea></div>
+
+      <h3 style="margin:24px 0 12px">Payment Method</h3>
+      <label class="check"><input type="radio" name="pay" checked /> Cash on delivery</label>
+      <label class="check"><input type="radio" name="pay" /> Bank transfer</label>
+      <label class="check"><input type="radio" name="pay" /> Mobile wallet</label>
+      <button class="btn btn--primary btn--block" type="submit" style="margin-top:22px">Place Order <i class="fa-solid fa-lock"></i></button>
+    </form>
+    <aside class="summary">
+      <h3>Your Order</h3>
+      <div class="summary-row"><span>Slim Herbal Tea &times; 1</span><span>$14.90</span></div>
+      <div class="summary-row"><span>Green Coffee Extract &times; 1</span><span>$24.50</span></div>
+      <div class="summary-row"><span>Whey Protein Shake &times; 1</span><span>$39.00</span></div>
+      <div class="summary-row"><span>Delivery</span><span>Free</span></div>
+      <div class="summary-row total"><span>Total</span><span>$73.40</span></div>
+      <p style="font-size:.8rem;color:var(--muted);margin-top:14px">By placing your order you agree to our Terms &amp; Conditions and Privacy Policy.</p>
+    </aside>
+  </div>
+</main>
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <img src="images/logo.png" alt="Zin Zin Pharmacy logo" width="42" height="42" />
+          <span>Zin Zin Pharmacy<small>Health &amp; Wellness</small></span>
+        </div>
+        <p>A modern wellness pharmacy offering carefully selected weight management and healthy lifestyle products for women and men.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="shop.html">Weight Management</a></li>
+          <li><a href="shop.html">Vitamins</a></li>
+          <li><a href="shop.html">Protein Products</a></li>
+          <li><a href="shop.html">Healthy Snacks</a></li>
+          <li><a href="shop.html">Herbal Tea</a></li>
+          <li><a href="shop.html">Personal Care</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Stay Informed</h4>
+        <p>Wellness tips and product updates, straight to your inbox.</p>
+        <form class="newsletter" action="#" method="post">
+          <label for="nl" class="sr-only" hidden>Email</label>
+          <input class="input" type="email" id="nl" name="email" placeholder="Your email" required />
+          <button class="btn btn--primary btn--sm" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p style="margin-top:14px"><i class="fa-solid fa-location-dot" style="color:var(--green)"></i> No. 25, Bogyoke Road, Yangon</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Zin Zin Pharmacy. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms &amp; Conditions</a> &nbsp;&middot;&nbsp; <a href="faq.html">Support</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
